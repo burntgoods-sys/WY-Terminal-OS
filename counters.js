@@ -1,11 +1,10 @@
 window.WYCounters = function(state, onChange) {
   const ids = {
-    day: 'dayValue',
     page: 'pageValue',
     panel: 'panelValue'
   };
 
-  const minimums = { day: 1, page: 1, panel: 1 };
+  const minimums = { page: 1, panel: 1 };
   const pad = n => String(Math.max(0, n)).padStart(3, '0');
 
   function renderOne(key) {
@@ -32,17 +31,18 @@ window.WYCounters = function(state, onChange) {
     }
 
     if (target === 'panel' && delta > 0 && window.wySession) {
-
-    state.panelLog.push({
-        day: state.day,
+      state.panelLog.push({
+        date: document.getElementById('dateValue')?.textContent || '',
         page: state.page,
         panel: state.panel - 1,
         elapsed: state.elapsed
-    });
+      });
 
-    window.wySession.reset();
-    window.wySession.start();
-}
+      window.wySession.reset();
+      window.wySession.start();
+    }
+  }
+
   document.querySelectorAll('[data-target][data-action]').forEach(btn => {
     btn.addEventListener('click', () => {
       const target = btn.dataset.target;
@@ -52,17 +52,14 @@ window.WYCounters = function(state, onChange) {
   });
 
   window.addEventListener('keydown', e => {
-    const key = e.key.toLowerCase();
-
     const shortcuts = {
-      q: ['day', -1],
-      w: ['day', 1],
       a: ['page', -1],
       s: ['page', 1],
       z: ['panel', -1],
       x: ['panel', 1]
     };
 
+    const key = e.key.toLowerCase();
     if (!shortcuts[key]) return;
 
     const [target, delta] = shortcuts[key];
