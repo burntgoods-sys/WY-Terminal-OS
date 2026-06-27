@@ -36,7 +36,7 @@ window.WYCounters = function(state, onChange) {
     if (typeof onChange === 'function') {
   onChange(`${target.toUpperCase()} ${pad(state[target])}`);
 }
-
+    
 if (target === 'panel' && delta > 0 && window.wySession) {
   window.wySession.reset();
   window.wySession.start();
