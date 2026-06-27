@@ -5,6 +5,7 @@ window.WYArchive = function(state) {
     const h = Math.floor(seconds / 3600);
     const m = Math.floor((seconds % 3600) / 60);
     const s = seconds % 60;
+
     return h > 0
       ? `${h}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`
       : `${m}:${String(s).padStart(2, '0')}`;
@@ -12,11 +13,18 @@ window.WYArchive = function(state) {
 
   function latestLine() {
     const log = state.panelLog || [];
-    if (!log.length) return 'ARCHIVE EMPTY';
+
+    if (!log.length) {
+      return 'ARCHIVE EMPTY';
+    }
 
     const last = log[log.length - 1];
-    return `D${pad(last.day)} P${pad(last.page)} #${pad(last.panel)} COMPLETE ${formatTime(last.elapsed)}`;
+
+    return `D${last.date || 'NO DATE'} P${pad(last.page)} #${pad(last.panel)} COMPLETE ${formatTime(last.elapsed)}`;
   }
 
-  return { latestLine, formatTime };
+  return {
+    latestLine,
+    formatTime
+  };
 };
