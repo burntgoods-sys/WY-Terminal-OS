@@ -34,9 +34,13 @@ window.WYCounters = function(state, onChange) {
     renderOne(target);
 
     if (typeof onChange === 'function') {
-      onChange(`${target.toUpperCase()} ${pad(state[target])}`);
-    }
-  }
+  onChange(`${target.toUpperCase()} ${pad(state[target])}`);
+}
+
+if (target === 'panel' && delta > 0 && window.wySession) {
+  window.wySession.reset();
+  window.wySession.start();
+}
 
   document.querySelectorAll('.counter-btn').forEach(btn => {
     btn.addEventListener('click', () => {
