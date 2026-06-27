@@ -158,3 +158,26 @@ h2 {
     background: var(--wy-green);
     color: var(--wy-black);
 }
+.brand,
+.panel,
+.console {
+    width: 100%;
+    margin: 0;
+}
+
+.brand {
+    border-bottom: 0;
+}
+
+.panel {
+    border-bottom: 0;
+}
+
+.console {
+    border-bottom: 1px solid var(--wy-dim);
+}
+
+.media-window,
+.artist-window {
+    width: 100%;
+}
