@@ -9,8 +9,6 @@ const dateText = today.toLocaleDateString('en-CA', {
   year: 'numeric'
 }).toUpperCase().replace(',', '');
 
-const dateEl = document.getElementById('dateValue');
-if (dateEl) dateEl.textContent = dateText;
   const terminal = WYConsole();
   const archive = WYArchive(state);
 
@@ -28,4 +26,6 @@ if (dateEl) dateEl.textContent = dateText;
   });
 
   terminal.write('FOUNDATION ONLINE');
+  const dateEl = document.getElementById('dateValue');
+if (dateEl) dateEl.textContent = dateText;
 })();
