@@ -2,7 +2,7 @@
   --sidebar-width: 360px;
   --safe-top: 16px;
   --safe-bottom: 16px;
-  --gap: 4px;
+  --gap: 0px;
 }
 
 * { box-sizing: border-box; }
