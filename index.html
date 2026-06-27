@@ -50,49 +50,46 @@
     ARCHIVE ID: A-426-1986 / FRAME LOCKED
 </div>
 
-    <section class="panel artist-panel">
-      <div class="panel-heading">
-        <h2>ARTIST FEED</h2>
-        <span>ONLINE</span>
-      </div>
-      <div class="media-window artist-window" aria-label="Artist webcam cutout">
-    <div class="artist-placeholder">
-        <span>ARTIST FEED</span>
-        <strong>CAMERA STANDBY</strong>
-    </div>
-</div>
-    </section>
+    <section class="panel workstation-panel">
+  <div class="panel-heading">
+    <h2>ARTIST FEED</h2>
+    <span>ONLINE</span>
+  </div>
 
-    <section class="panel session-panel">
-      <h2>SESSION</h2>
-      <div class="session-date">
-  <span>DATE</span>
-  <output id="dateValue">-- --- ----</output>
-</div>
-      <output id="sessionTimer" class="timer">00:00:00</output>
-<div class="timer-controls">
+  <div class="media-window artist-window" aria-label="Artist webcam cutout">
+    <div class="artist-placeholder">
+      <span>ARTIST FEED</span>
+      <strong>CAMERA STANDBY</strong>
+    </div>
+  </div>
+
+  <div class="workstation-divider"></div>
+
+  <h2>SESSION</h2>
+
+  <div class="session-date">
+    <span>DATE</span>
+    <output id="dateValue">-- --- ----</output>
+  </div>
+
+  <output id="sessionTimer" class="timer">00:00:00</output>
+
+  <div class="timer-controls">
     <button class="timer-btn" data-timer-action="start">START</button>
     <button class="timer-btn" data-timer-action="pause">PAUSE</button>
     <button class="timer-btn" data-timer-action="reset">RESET</button>
-</div>                                        
-      <div class="status-grid">
-        <span><i></i>REC</span>
-        <span><i></i>CRT</span>
-        <span><i></i>ARCHIVE</span>
-      </div>
-    </section>
+  </div>
 
-    <section class="console" aria-label="Terminal console">
-      <span class="prompt">&gt;</span>
-      <span id="consoleMessage">SESSION ACTIVE</span><span class="cursor">_</span>
-    </section>
-  </main>
+  <div class="status-grid">
+    <span><i></i>REC</span>
+    <span><i></i>CRT</span>
+    <span><i></i>ARCHIVE</span>
+  </div>
 
-  <script src="storage.js"></script>
-  <script src="counters.js"></script>
-  <script src="session.js"></script>
-  <script src="archive.js"></script>                           
-  <script src="console.js"></script>
-  <script src="app.js"></script>
-</body>
-</html>
+  <div class="workstation-divider"></div>
+
+  <div class="console" aria-label="Terminal console">
+    <span class="prompt">&gt;</span>
+    <span id="consoleMessage">SESSION ACTIVE</span><span class="cursor">_</span>
+  </div>
+</section>
