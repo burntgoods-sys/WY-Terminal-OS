@@ -42,3 +42,27 @@ html, body {
 @media (max-width: 1200px) {
   :root { --sidebar-width: 320px; }
 }
+.archive-preview {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.archive-preview-value {
+    color: var(--terminal-green);
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+}
+
+.session-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.session-date output {
+    color: var(--terminal-green);
+    font-weight: bold;
+}
