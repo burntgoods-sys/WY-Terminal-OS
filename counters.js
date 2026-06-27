@@ -1,16 +1,70 @@
 window.WYCounters = function(state, onChange) {
-  const ids = { day: 'dayValue', page: 'pageValue', panel: 'panelValue' };
+  const ids = {
+    day: 'dayValue',
+    page: 'pageValue',
+    panel: 'panelValue'
+  };
+
+  const minimums = {
+    day: 1,
+    page: 1,
+    panel: 1
+  };
+
   const pad = n => String(Math.max(0, n)).padStart(3, '0');
-  function render() { Object.keys(ids).forEach(k => document.getElementById(ids[k]).textContent = pad(state[k])); }
-  function change(target, delta) { state[target] = Math.max(0, state[target] + delta); render(); onChange(`${target.toUpperCase()} ${pad(state[target])}`); }
+
+  function renderOne(key) {
+    const el = document.getElementById(ids[key]);
+    if (!el) return;
+
+    el.textContent = pad(state[key]);
+    el.classList.remove('is-changing');
+    void el.offsetWidth;
+    el.classList.add('is-changing');
+  }
+
+  function render() {
+    Object.keys(ids).forEach(renderOne);
+  }
+
+  function change(target, delta) {
+    const min = minimums[target] ?? 0;
+    state[target] = Math.max(min, state[target] + delta);
+
+    renderOne(target);
+
+    if (typeof onChange === 'function') {
+      onChange(`${target.toUpperCase()} ${pad(state[target])}`);
+    }
+  }
+
   document.querySelectorAll('.counter-btn').forEach(btn => {
-    btn.addEventListener('click', () => change(btn.dataset.target, btn.dataset.action === 'inc' ? 1 : -1));
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.target;
+      const delta = btn.dataset.action === 'inc' ? 1 : -1;
+      change(target, delta);
+    });
   });
+
   window.addEventListener('keydown', e => {
-    const map = { q:['day',-1], w:['day',1], a:['page',-1], s:['page',1], z:['panel',-1], x:['panel',1] };
-    const hit = map[e.key.toLowerCase()];
-    if (hit) change(hit[0], hit[1]);
+    const key = e.key.toLowerCase();
+
+    const shortcuts = {
+      q: ['day', -1],
+      w: ['day', 1],
+      a: ['page', -1],
+      s: ['page', 1],
+      z: ['panel', -1],
+      x: ['panel', 1]
+    };
+
+    if (!shortcuts[key]) return;
+
+    const [target, delta] = shortcuts[key];
+    change(target, delta);
   });
+
   render();
+
   return { render, change };
 };
