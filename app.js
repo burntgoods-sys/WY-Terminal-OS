@@ -2,17 +2,21 @@
   const state = WYStorage.load();
 
   const today = new Date();
+  const dateText = today.toLocaleDateString('en-CA', {
+    day: '2-digit',
+    month: 'short',
+    year: 'numeric'
+  }).toUpperCase().replace(',', '');
 
-const dateText = today.toLocaleDateString('en-CA', {
-  day: '2-digit',
-  month: 'short',
-  year: 'numeric'
-}).toUpperCase().replace(',', '');
+  const dateEl = document.getElementById('dateValue');
+  if (dateEl) dateEl.textContent = dateText;
 
   const terminal = WYConsole();
-  const archive = WYArchive(state);
-
   const save = () => WYStorage.save(state);
+
+  const archive = window.WYArchive
+    ? WYArchive(state)
+    : { latestLine: () => 'BUFFER EMPTY' };
 
   window.wySession = WYSession(state, msg => {
     if (msg) terminal.write(msg);
@@ -26,6 +30,4 @@ const dateText = today.toLocaleDateString('en-CA', {
   });
 
   terminal.write('FOUNDATION ONLINE');
-  const dateEl = document.getElementById('dateValue');
-if (dateEl) dateEl.textContent = dateText;
 })();
