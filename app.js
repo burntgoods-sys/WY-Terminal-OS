@@ -2,16 +2,15 @@
   const state = WYStorage.load();
 
   const today = new Date();
-  const months = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
-  const dateText =
-    String(today.getDate()).padStart(2, '0') +
-    ' ' +
-    months[today.getMonth()] +
-    ' ' +
-    today.getFullYear();
 
-  document.getElementById('dateValue').textContent = dateText;
+const dateText = today.toLocaleDateString('en-CA', {
+  day: '2-digit',
+  month: 'short',
+  year: 'numeric'
+}).toUpperCase().replace(',', '');
 
+const dateEl = document.getElementById('dateValue');
+if (dateEl) dateEl.textContent = dateText;
   const terminal = WYConsole();
   const archive = WYArchive(state);
 
