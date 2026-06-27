@@ -66,3 +66,19 @@ html, body {
     color: var(--terminal-green);
     font-weight: bold;
 }
+.panel,
+.brand,
+.console {
+    margin: 0;
+}
+
+.panel + .panel,
+.panel + .console,
+.brand + .panel {
+    margin-top: -1px;
+}
+
+.artist-window,
+.session-panel {
+    width: 100%;
+}
