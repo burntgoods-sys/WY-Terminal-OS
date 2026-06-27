@@ -181,3 +181,15 @@ h2 {
 .artist-window {
     width: 100%;
 }
+.media-window {
+    margin-top: 6px;
+}
+
+.reference-window,
+.artist-window {
+    width: 100%;
+}
+
+.panel {
+    padding: 8px;
+}
