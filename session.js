@@ -1,7 +1,7 @@
 window.WYSession = function(state, onChange) {
   const timerEl = document.getElementById('sessionTimer');
-  const buttons = document.querySelectorAll('.timer-btn');
-
+  const buttons = document.querySelectorAll('[data-timer-action]');
+  
   let elapsed = state.panelElapsed || 0;
   let startedAt = null;
   let interval = null;
@@ -72,7 +72,7 @@ window.WYSession = function(state, onChange) {
 
   buttons.forEach(button => {
     button.addEventListener('click', () => {
-      const action = button.dataset.timerAction;
+      const action = button.getAttribute('data-timer-action');
 
       if (action === 'start') start();
       if (action === 'pause') pause();
