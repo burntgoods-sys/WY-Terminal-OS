@@ -165,30 +165,7 @@ h2 {
     margin: 0;
 }
 
-.brand {
-    border-bottom: 0;
-}
 
-.panel {
-    border-bottom: 0;
-}
-
-.console {
-    border-bottom: 1px solid var(--wy-dim);
-}
-
-.media-window,
-.artist-window {
-    width: 100%;
-}
-.media-window {
-    margin-top: 6px;
-}
-
-.reference-window,
-.artist-window {
-    width: 100%;
-}
 
 .panel {
     padding: 8px;
@@ -197,4 +174,27 @@ h2 {
     border-left: 1px solid var(--wy-green);
     border-right: 1px solid var(--wy-green);
     border-bottom: 1px solid var(--wy-green);
+}
+
+.brand,
+.panel,
+.console {
+    width: 100%;
+    margin: 0;
+    border-left: 1px solid var(--wy-green);
+    border-right: 1px solid var(--wy-green);
+}
+
+.brand,
+.panel {
+    border-bottom: 1px solid var(--wy-green);
+}
+
+.console {
+    border-bottom: 1px solid var(--wy-green);
+}
+
+.media-window,
+.artist-window {
+    width: 100%;
 }
