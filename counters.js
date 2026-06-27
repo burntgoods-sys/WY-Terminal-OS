@@ -42,7 +42,7 @@ if (target === 'panel' && delta > 0 && window.wySession) {
   window.wySession.start();
 }
 
-  document.querySelectorAll('.counter-btn').forEach(btn => {
+  document.querySelectorAll('[data-target][data-action]').forEach(btn => {
     btn.addEventListener('click', () => {
       const target = btn.dataset.target;
       const delta = btn.dataset.action === 'inc' ? 1 : -1;
