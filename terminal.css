@@ -171,9 +171,8 @@ h2 {
     padding: 8px;
 }
 .terminal {
-    border-left: 1px solid var(--wy-green);
-    border-right: 1px solid var(--wy-green);
-    border-bottom: 1px solid var(--wy-green);
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .brand,
@@ -192,9 +191,4 @@ h2 {
 
 .console {
     border-bottom: 1px solid var(--wy-green);
-}
-
-.media-window,
-.artist-window {
-    width: 100%;
 }
