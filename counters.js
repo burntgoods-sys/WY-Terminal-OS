@@ -32,11 +32,17 @@ window.WYCounters = function(state, onChange) {
     }
 
     if (target === 'panel' && delta > 0 && window.wySession) {
-      window.wySession.reset();
-      window.wySession.start();
-    }
-  }
 
+    state.panelLog.push({
+        day: state.day,
+        page: state.page,
+        panel: state.panel - 1,
+        elapsed: state.elapsed
+    });
+
+    window.wySession.reset();
+    window.wySession.start();
+}
   document.querySelectorAll('[data-target][data-action]').forEach(btn => {
     btn.addEventListener('click', () => {
       const target = btn.dataset.target;
