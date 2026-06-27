@@ -5,18 +5,12 @@ window.WYCounters = function(state, onChange) {
     panel: 'panelValue'
   };
 
-  const minimums = {
-    day: 1,
-    page: 1,
-    panel: 1
-  };
-
+  const minimums = { day: 1, page: 1, panel: 1 };
   const pad = n => String(Math.max(0, n)).padStart(3, '0');
 
   function renderOne(key) {
     const el = document.getElementById(ids[key]);
     if (!el) return;
-
     el.textContent = pad(state[key]);
     el.classList.remove('is-changing');
     void el.offsetWidth;
@@ -34,13 +28,14 @@ window.WYCounters = function(state, onChange) {
     renderOne(target);
 
     if (typeof onChange === 'function') {
-  onChange(`${target.toUpperCase()} ${pad(state[target])}`);
-}
-    
-if (target === 'panel' && delta > 0 && window.wySession) {
-  window.wySession.reset();
-  window.wySession.start();
-}
+      onChange(`${target.toUpperCase()} ${pad(state[target])}`);
+    }
+
+    if (target === 'panel' && delta > 0 && window.wySession) {
+      window.wySession.reset();
+      window.wySession.start();
+    }
+  }
 
   document.querySelectorAll('[data-target][data-action]').forEach(btn => {
     btn.addEventListener('click', () => {
