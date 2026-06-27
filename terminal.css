@@ -96,3 +96,9 @@ h2 {
 .prompt { color: var(--wy-green); margin-right: 5px; }
 .cursor { animation: blink 1s steps(2,end) infinite; }
 @keyframes blink { 50% { opacity: 0; } }
+.reference-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
