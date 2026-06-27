@@ -193,3 +193,8 @@ h2 {
 .panel {
     padding: 8px;
 }
+.terminal {
+    border-left: 1px solid var(--wy-green);
+    border-right: 1px solid var(--wy-green);
+    border-bottom: 1px solid var(--wy-green);
+}
