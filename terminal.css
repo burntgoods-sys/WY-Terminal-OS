@@ -1,9 +1,9 @@
 :root {
   --wy-green: #76ff8b;
-  --wy-dim: rgba(118,255,139,.52);
-  --wy-faint: rgba(118,255,139,.18);
-  --wy-bg: rgba(0,10,4,.86);
-  --wy-black: rgba(0,0,0,.72);
+  --wy-dim: rgba(118, 255, 139, .52);
+  --wy-faint: rgba(118, 255, 139, .18);
+  --wy-bg: rgba(0, 10, 4, .86);
+  --wy-black: rgba(0, 0, 0, .72);
 }
 
 body {
@@ -16,7 +16,7 @@ body {
   text-shadow: 0 0 5px rgba(118,255,139,.55);
 }
 
-/* MAIN CHASSIS MODULES */
+/* ONE OUTER WORKSTATION CHASSIS */
 .brand,
 .panel,
 .console {
@@ -25,6 +25,7 @@ body {
   background: var(--wy-bg);
   border-left: 1px solid var(--wy-dim);
   border-right: 1px solid var(--wy-dim);
+  border-top: 0;
   border-bottom: 1px solid var(--wy-dim);
   box-shadow: inset 0 0 18px rgba(118,255,139,.06), 0 0 10px rgba(0,0,0,.45);
 }
@@ -38,25 +39,13 @@ body {
   padding: 8px;
 }
 
-/* ARTIST WORKSTATION: make Artist Feed, Session, Console feel continuous */
-.artist-panel {
-  border-bottom: 0;
-}
-
-.session-panel {
-  border-top: 0;
-  border-bottom: 0;
-}
-
 .console {
-  border-top: 0;
   min-height: 44px;
   padding: 8px;
   font-size: 10px;
   color: var(--wy-dim);
 }
 
-/* TEXT */
 .brand-title {
   font-size: 18px;
   font-weight: 800;
@@ -165,10 +154,6 @@ h2 {
   height: 100%;
   object-fit: contain;
   display: block;
-}
-
-.artist-window {
-  width: 100%;
 }
 
 .artist-placeholder {
