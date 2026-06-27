@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WY-Terminal-OS</title>
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/terminal.css" />
+</head>
+<body>
+  <main id="wy-terminal" class="terminal" aria-label="WY Terminal OS">
+    <header class="brand">
+      <div class="brand-title">WEYLAND-YUTANI</div>
+      <div class="brand-subtitle">LV-426 STORYBOARD ARCHIVE</div>
+    </header>
+
+    <section class="panel mission-panel">
+      <h2>MISSION CONTROL</h2>
+      <div class="counter-row" data-counter="day">
+        <span class="counter-label">DAY</span>
+        <button class="counter-btn" data-action="dec" data-target="day">−</button>
+        <output id="dayValue" class="counter-value">002</output>
+        <button class="counter-btn" data-action="inc" data-target="day">+</button>
+      </div>
+      <div class="counter-row" data-counter="page">
+        <span class="counter-label">PAGE</span>
+        <button class="counter-btn" data-action="dec" data-target="page">−</button>
+        <output id="pageValue" class="counter-value">006</output>
+        <button class="counter-btn" data-action="inc" data-target="page">+</button>
+      </div>
+      <div class="counter-row" data-counter="panel">
+        <span class="counter-label">PANEL</span>
+        <button class="counter-btn" data-action="dec" data-target="panel">−</button>
+        <output id="panelValue" class="counter-value">055</output>
+        <button class="counter-btn" data-action="inc" data-target="panel">+</button>
+      </div>
+    </section>
+
+    <section class="panel reference-panel">
+      <div class="panel-heading">
+        <h2>SOURCE FRAME</h2>
+        <span>FRAME VERIFIED</span>
+      </div>
+      <div class="media-window reference-window" aria-label="Reference image cutout"></div>
+      <div class="microtext">ARCHIVE ID: A-426-1986 / FRAME LOCKED</div>
+    </section>
+
+    <section class="panel artist-panel">
+      <div class="panel-heading">
+        <h2>ARTIST FEED</h2>
+        <span>ONLINE</span>
+      </div>
+      <div class="media-window artist-window" aria-label="Artist webcam cutout"></div>
+    </section>
+
+    <section class="panel session-panel">
+      <h2>SESSION</h2>
+      <output id="sessionTimer" class="timer">00:00:00</output>
+      <div class="status-grid">
+        <span><i></i>REC</span>
+        <span><i></i>CRT</span>
+        <span><i></i>ARCHIVE</span>
+      </div>
+    </section>
+
+    <section class="console" aria-label="Terminal console">
+      <span class="prompt">&gt;</span>
+      <span id="consoleMessage">SESSION ACTIVE</span><span class="cursor">_</span>
+    </section>
+  </main>
+
+  <script src="js/storage.js"></script>
+  <script src="js/counters.js"></script>
+  <script src="js/session.js"></script>
+  <script src="js/console.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
