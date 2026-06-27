@@ -16,10 +16,10 @@
 
     <section class="panel mission-panel">
       <h2>MISSION CONTROL</h2>
-      <div class="counter-row" data-counter="date">
-        <span class="counter-label">DATE</span>
-        <output id="dateValue">28 JUN 2026</output>
-      </div>
+      <div class="archive-preview">
+  <span class="counter-label">ARCHIVE</span>
+  <output id="archivePreview" class="archive-preview-value">BUFFER EMPTY</output>
+</div>
       <div class="counter-row" data-counter="page">
         <span class="counter-label">PAGE</span>
         <button class="counter-btn" data-action="dec" data-target="page">−</button>
@@ -65,6 +65,10 @@
 
     <section class="panel session-panel">
       <h2>SESSION</h2>
+      <div class="session-date">
+  <span>DATE</span>
+  <output id="dateValue">-- --- ----</output>
+</div>
       <output id="sessionTimer" class="timer">00:00:00</output>
 <div class="timer-controls">
     <button class="timer-btn" data-timer-action="start">START</button>
