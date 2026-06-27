@@ -1,8 +1,7 @@
 :root {
   --wy-green: #76ff8b;
-  --wy-dim: rgba(118, 255, 139, .52);
-  --wy-faint: rgba(118, 255, 139, .18);
-  --wy-bg: rgba(0, 10, 4, .86);
+  --wy-dim: rgba(118, 255, 139, .62);
+  --wy-bg: rgba(0, 10, 4, .88);
   --wy-black: rgba(0, 0, 0, .72);
 }
 
@@ -11,41 +10,39 @@ body {
   color: var(--wy-green);
 }
 
+/* ONE OUTER CHASSIS */
 .terminal {
-  background: linear-gradient(90deg, rgba(0,0,0,.82), rgba(0,8,3,.72) 72%, rgba(0,0,0,0));
+  background: var(--wy-bg);
+  border: 1px solid var(--wy-green);
   text-shadow: 0 0 5px rgba(118,255,139,.55);
 }
 
-/* ONE OUTER WORKSTATION CHASSIS */
+/* COMPARTMENTS ONLY GET HORIZONTAL DIVIDERS */
 .brand,
 .panel,
 .console {
   width: 100%;
   margin: 0;
-  background: var(--wy-bg);
-  border-left: 1px solid var(--wy-dim);
-  border-right: 1px solid var(--wy-dim);
-  border-top: 0;
-  border-bottom: 1px solid var(--wy-dim);
-  box-shadow: inset 0 0 18px rgba(118,255,139,.06), 0 0 10px rgba(0,0,0,.45);
-}
-
-.brand {
-  border-top: 1px solid var(--wy-dim);
-  padding: 8px 10px;
-}
-
-.panel {
   padding: 8px;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--wy-green);
+  box-shadow: none;
+}
+
+.workstation-panel {
+  border-bottom: 0;
 }
 
 .console {
-  min-height: 44px;
-  padding: 8px;
-  font-size: 10px;
+  border-top: 1px solid var(--wy-green);
+  border-bottom: 0;
+  min-height: 38px;
+  font-size: 9px;
   color: var(--wy-dim);
 }
 
+/* TEXT */
 .brand-title {
   font-size: 18px;
   font-weight: 800;
@@ -53,10 +50,16 @@ body {
 }
 
 .brand-subtitle {
-  font-size: 9px;
+  font-size: 8px;
   color: var(--wy-dim);
   letter-spacing: .12em;
-  margin-top: 2px;
+}
+
+h2 {
+  margin: 0 0 6px;
+  font-size: 10px;
+  letter-spacing: .14em;
+  color: var(--wy-dim);
 }
 
 .panel-heading {
@@ -71,60 +74,45 @@ body {
   color: var(--wy-dim);
 }
 
-h2 {
-  margin: 0 0 8px;
-  font-size: 10px;
-  letter-spacing: .16em;
-  color: var(--wy-dim);
-}
-
-/* COUNTERS */
+/* MISSION CONTROL */
 .counter-row {
   display: grid;
-  grid-template-columns: 1fr 32px 72px 32px;
+  grid-template-columns: 1fr 28px 64px 28px;
   align-items: center;
-  gap: 7px;
-  margin: 7px 0;
+  gap: 6px;
+  margin: 6px 0;
 }
 
 .counter-label {
-  font-size: 11px;
+  font-size: 10px;
   color: var(--wy-dim);
   letter-spacing: .12em;
 }
 
 .counter-value {
   text-align: center;
-  font-size: 28px;
+  font-size: 24px;
   line-height: 1;
   font-weight: 800;
 }
 
 .counter-btn {
-  height: 28px;
-  border: 1px solid var(--wy-dim);
+  height: 26px;
+  border: 1px solid var(--wy-green);
   background: rgba(118,255,139,.08);
   color: var(--wy-green);
   font: inherit;
-  cursor: pointer;
 }
 
-.counter-btn:active {
-  transform: translateY(1px);
-  background: rgba(118,255,139,.22);
-}
-
-/* ARCHIVE PREVIEW */
 .archive-preview {
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
-  margin: 4px 0 10px;
+  margin: 2px 0 8px;
 }
 
 .archive-preview-value {
-  color: var(--wy-green);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 800;
   letter-spacing: .08em;
 }
@@ -132,19 +120,24 @@ h2 {
 /* MEDIA WINDOWS */
 .media-window {
   width: 100%;
-  border: 1px solid var(--wy-dim);
-  background: rgba(0,0,0,.36);
+  border: 1px solid var(--wy-green);
+  background: rgba(0,0,0,.35);
   position: relative;
   overflow: hidden;
-  margin-top: 6px;
+  margin-top: 5px;
 }
 
 .media-window::before {
   content: "";
   position: absolute;
   inset: 0;
-  border: 8px solid transparent;
-  border-image: linear-gradient(135deg, var(--wy-green) 0 10px, transparent 10px calc(100% - 10px), var(--wy-green) calc(100% - 10px)) 1;
+  border: 7px solid transparent;
+  border-image: linear-gradient(
+    135deg,
+    var(--wy-green) 0 9px,
+    transparent 9px calc(100% - 9px),
+    var(--wy-green) calc(100% - 9px)
+  ) 1;
   opacity: .55;
   pointer-events: none;
 }
@@ -156,6 +149,10 @@ h2 {
   display: block;
 }
 
+.artist-window {
+  width: 100%;
+}
+
 .artist-placeholder {
   width: 100%;
   height: 100%;
@@ -165,9 +162,7 @@ h2 {
   color: var(--wy-dim);
   font-size: 10px;
   letter-spacing: .16em;
-  background:
-    linear-gradient(135deg, rgba(118,255,139,.08), transparent 45%),
-    rgba(0,0,0,.55);
+  background: rgba(0,0,0,.50);
 }
 
 .artist-placeholder strong {
@@ -182,81 +177,64 @@ h2 {
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
-  margin-bottom: 8px;
+  margin: 8px 0 6px;
 }
 
-.session-date span {
-  color: var(--wy-dim);
-  font-weight: 800;
-}
-
+.session-date span,
 .session-date output {
-  color: var(--wy-green);
   font-weight: 800;
-  letter-spacing: .08em;
 }
 
 .timer {
   display: block;
   text-align: center;
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 800;
   margin: 4px 0 8px;
 }
 
 .timer-controls {
-  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 6px;
-  margin: 4px 0 8px;
+  gap: 5px;
+  margin-bottom: 7px;
 }
 
 .timer-btn {
-  appearance: none;
-  -webkit-appearance: none;
   background: var(--wy-black);
   color: var(--wy-green);
   border: 1px solid var(--wy-green);
   font-family: inherit;
   font-size: 8px;
   letter-spacing: .08em;
-  padding: 5px 4px;
-  min-width: 52px;
-  box-shadow: 0 0 6px rgba(118,255,139,.35);
+  padding: 4px;
 }
 
 .timer-btn[data-timer-action="reset"] {
   grid-column: 1 / -1;
 }
 
-.timer-btn:active {
-  background: var(--wy-green);
-  color: var(--wy-black);
-}
-
 .status-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 6px;
-  font-size: 9px;
+  font-size: 8px;
+  gap: 5px;
 }
 
 .status-grid span {
   display: flex;
-  gap: 5px;
+  gap: 4px;
   align-items: center;
 }
 
 .status-grid i {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: var(--wy-green);
-  box-shadow: 0 0 8px var(--wy-green);
+  box-shadow: 0 0 7px var(--wy-green);
 }
 
-/* CONSOLE */
 .prompt {
   color: var(--wy-green);
   margin-right: 5px;
@@ -268,16 +246,4 @@ h2 {
 
 @keyframes blink {
   50% { opacity: 0; }
-}
-.terminal {
-  border-left: 1px solid var(--wy-green);
-  border-right: 1px solid var(--wy-green);
-  border-bottom: 1px solid var(--wy-green);
-}
-
-.brand,
-.panel,
-.console {
-  border-left: 0;
-  border-right: 0;
 }
