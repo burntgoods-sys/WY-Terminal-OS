@@ -247,3 +247,11 @@ h2 {
 @keyframes blink {
   50% { opacity: 0; }
 }
+button:active,
+.counter-btn:active,
+.timer-btn:active {
+  background: var(--wy-green);
+  color: var(--wy-black);
+  box-shadow: 0 0 12px var(--wy-green);
+  transform: translateY(1px);
+}
