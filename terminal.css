@@ -358,16 +358,16 @@ button:active,
 .sentry-indicator-button {
     display: block;
     width: 82%;
-    margin: 0 auto;
+    margin-top: -3px;
 
     padding: 10px 0;
 
     background: #111;
-    border: 2px solid var(--wy-green);
+    border: 3px solid var(--wy-green);
 
     color: var(--wy-green);
     font-family: inherit;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 900;
     letter-spacing: .08em;
     text-transform: uppercase;
