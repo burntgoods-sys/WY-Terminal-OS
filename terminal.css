@@ -327,13 +327,120 @@ button:active,
     color: #111;
 }
 
-.sentry-indicator-title {
-    text-align: center;
-    color: #111;
-    font-size: 16px;
+.sentry-indicator-button {
+    display: block;
+    width: 82%;
+    margin: 0 auto;
+
+    padding: 10px 0;
+
+    background: #111;
+    border: 2px solid var(--wy-green);
+
+    color: var(--wy-green);
+    font-family: inherit;
+    font-size: 12px;
     font-weight: 900;
     letter-spacing: .08em;
-    margin-bottom: 12px;
+    text-transform: uppercase;
+    line-height: 1.3;
+
+    cursor: pointer;
+
+    transition:
+        background .15s ease,
+        color .15s ease,
+        border-color .15s ease,
+        box-shadow .15s ease,
+        transform .08s ease;
 }
 
+.sentry-indicator-button {
+    display: block;
+    width: 82%;
+    margin: 0 auto;
 
+    padding: 10px 0;
+
+    background: #111;
+    border: 2px solid var(--wy-green);
+
+    color: var(--wy-green);
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    line-height: 1.3;
+
+    cursor: pointer;
+
+    transition:
+        background .15s ease,
+        color .15s ease,
+        border-color .15s ease,
+        box-shadow .15s ease,
+        transform .08s ease;
+}
+
+.sentry-indicator-button {
+
+    display: block;
+
+    width: 82%;
+
+    margin: 0 auto;
+
+    padding: 10px 0;
+
+    background: #111;
+
+    border: 2px solid var(--wy-green);
+
+    color: var(--wy-green);
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    letter-spacing: .08em;
+
+    text-transform: uppercase;
+
+    line-height: 1.3;
+
+    cursor: pointer;
+
+    transition:
+
+        background .15s ease,
+
+        color .15s ease,
+
+        border-color .15s ease,
+
+        box-shadow .15s ease,
+
+        transform .08s ease;
+
+}
+
+.sentry-indicator-button:hover {
+
+    box-shadow: 0 0 8px var(--wy-green);
+
+}
+
+.sentry-indicator-button:active {
+
+    background: #6b0000;
+
+    border-color: #ff4040;
+
+    color: #ffffff;
+
+    box-shadow: 0 0 12px #ff3030;
+
+    transform: translateY(2px);
