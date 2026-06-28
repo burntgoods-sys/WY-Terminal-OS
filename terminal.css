@@ -291,3 +291,30 @@ button:active,
             #d9b100 24px
         );
 }
+.defence-title {
+    color: #111;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: .15em;
+    margin-bottom: 8px;
+}
+.defence-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4px 0;
+}
+.sentry-status {
+    color: #111;
+    font-weight: 700;
+}
+.nuke-button {
+    border: 2px solid #111;
+    background: #d9b100;
+    color: #111;
+    font-weight: 900;
+    text-align: center;
+    padding: 6px;
+    margin-top: 10px;
+}
