@@ -20,7 +20,6 @@
       add: () => {},
       latestLine: () => 'BUFFER EMPTY'
     };
-  window.wyArchive = archive;
 
   window.wySession = WYSession(state, msg => {
     if (msg) terminal.write(msg);
