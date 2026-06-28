@@ -1,7 +1,7 @@
 window.WYSession = function(state, onChange) {
   const timerEl = document.getElementById('sessionTimer');
   const buttons = document.querySelectorAll('[data-timer-action]');
-  
+
   let elapsed = state.panelElapsed || 0;
   let startedAt = null;
   let interval = null;
@@ -56,24 +56,24 @@ window.WYSession = function(state, onChange) {
     state.panelElapsed = elapsed;
     save('PANEL TIMER PAUSED');
     render();
-
-
-  function reset() {
-  if (currentElapsed() > 0) {
-    save('ARCHIVE PANEL?');
-    return;
   }
 
-  elapsed = 0;
-  startedAt = null;
+  function reset() {
+    if (currentElapsed() > 0) {
+      save('ARCHIVE PANEL?');
+      return;
+    }
 
-  clearInterval(interval);
-  interval = null;
+    elapsed = 0;
+    startedAt = null;
 
-  state.panelElapsed = 0;
-  save('PANEL TIMER RESET');
-  render();
-}
+    clearInterval(interval);
+    interval = null;
+
+    state.panelElapsed = 0;
+    save('PANEL TIMER RESET');
+    render();
+  }
 
   buttons.forEach(button => {
     button.addEventListener('click', () => {
