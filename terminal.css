@@ -280,7 +280,7 @@ button:active,
 
 .defence-panel {
     margin-top: 2px;
-    padding: 6px;
+    padding: 6px 6px 24px 6px;
     height: 76px;
     overflow: hidden;
     border: 0;
@@ -324,5 +324,4 @@ button:active,
 
         /* Clean yellow centre */
         #ffd400;
-  background-position-y: -10px, calc(100% + 0px), 0, 0, 0;
 }
