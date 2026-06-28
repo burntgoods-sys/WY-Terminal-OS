@@ -331,7 +331,7 @@ button:active,
     display: block;
     width: calc(105% - 12px);
     max-width: none;
-    margin: -5px auto 0 auto;
+    margin: -5.5px auto 0 auto;
 
     padding: 11px 0;
 
