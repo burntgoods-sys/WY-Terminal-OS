@@ -329,7 +329,7 @@ button:active,
 
 .sentry-indicator-button {
     display: block;
-    width: calc(105% - 12px);
+    width: calc(10% - 8px);
     max-width: none;
     margin: -5.5px auto 0 auto;
 
