@@ -34,7 +34,7 @@ html, body {
   min-height: 86px;
   aspect-ratio: 16 / 9;
 }
-.artist-window { aspect-ratio: 16 / 8.6; }
+.artist-window { aspect-ratio: 16 / 9; }
 
 @media (max-height: 850px) {
   :root { --gap: 8px; --safe-top: 10px; --safe-bottom: 10px; }
