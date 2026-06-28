@@ -274,4 +274,20 @@ button:active,
   margin: 0;
   padding-left: 14px;
 }
+/* ===========================
+   DEFENCE SYSTEMS
+=========================== */
 
+.defence-panel {
+    margin-top: 10px;
+    padding: 8px;
+    border: 2px solid #d9b100;
+    background:
+        repeating-linear-gradient(
+            -45deg,
+            #111 0px,
+            #111 12px,
+            #d9b100 12px,
+            #d9b100 24px
+        );
+}
