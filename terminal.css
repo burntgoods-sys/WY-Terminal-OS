@@ -279,8 +279,11 @@ button:active,
 =========================== */
 
 .defence-panel {
-    margin-top: -33px;
-    padding: 4px 4px 14px 4px;
+    margin-top: -6px;
+    margin-bottom: 0;
+    padding: 4px;
+    height: 76px;
+    overflow: hidden;
     border: 0;
 
     background:
