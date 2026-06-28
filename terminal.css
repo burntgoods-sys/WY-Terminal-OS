@@ -279,18 +279,17 @@ button:active,
 =========================== */
 
 .defence-panel {
-  margin-top: 6px;
-  padding: 6px;
-  border: 1px solid var(--wy-green);
-
-  background:
-    repeating-linear-gradient(
-      -45deg,
-      #111 0px,
-      #111 8px,
-      #d9b100 8px,
-      #d9b100 16px
-    );
+    margin-top: 4px;
+    padding: 4px;
+    border: 1px solid var(--wy-green);
+    background:
+        repeating-linear-gradient(
+            -45deg,
+            #111 0px,
+            #111 8px,
+            #d9b100 8px,
+            #d9b100 16px
+        );
 }
 .defence-panel > * {
   background: rgba(0,0,0,.72);
