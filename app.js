@@ -44,7 +44,8 @@ archiveChoices.forEach(button => {
     } else {
       terminal.write('ARCHIVE CANCELLED');
     }
-
+window.wySession.reset();
+   
     if (archiveConfirm) archiveConfirm.hidden = true;
     save();
   });
