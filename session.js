@@ -59,21 +59,16 @@ window.WYSession = function(state, onChange) {
   }
 
   function reset() {
-    if (currentElapsed() > 0) {
-      save('ARCHIVE PANEL?');
-      return;
-    }
+  elapsed = 0;
+  startedAt = null;
 
-    elapsed = 0;
-    startedAt = null;
+  clearInterval(interval);
+  interval = null;
 
-    clearInterval(interval);
-    interval = null;
-
-    state.panelElapsed = 0;
-    save('PANEL TIMER RESET');
-    render();
-  }
+  state.panelElapsed = 0;
+  save('PANEL TIMER RESET');
+  render();
+}
 
   buttons.forEach(button => {
     button.addEventListener('click', () => {
