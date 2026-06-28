@@ -337,10 +337,10 @@ button:active,
 .sentry-indicator-title {
     text-align: center;
     color: #111;
-    font-size: 8px;
+    font-size: 16px;
     font-weight: 900;
-    letter-spacing: .08em;
-    margin-bottom: 12px;
+    letter-spacing: .18em;
+    margin-bottom: 14px;
 }
 
 .sentry-lights {
