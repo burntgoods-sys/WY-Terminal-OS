@@ -15,6 +15,7 @@ html, body {
 }
 
 .terminal {
+  align-content: start;
   position: fixed;
   left: 0;
   top: 0;
@@ -24,6 +25,7 @@ html, body {
   display: grid;
   grid-template-rows: auto auto 1fr .72fr auto auto;
   gap: 4px;
+  align-content: start;
 }
 
 .panel { min-height: 0; }
