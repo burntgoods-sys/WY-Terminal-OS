@@ -59,21 +59,16 @@ window.WYSession = function(state, onChange) {
   }
 
   function reset() {
-  const completedElapsed = currentElapsed();
+    elapsed = 0;
+    startedAt = null;
 
-  if (completedElapsed > 0 && window.wyArchive) {
-    window.wyArchive.add(state.page, state.panel);
-  }
+    clearInterval(interval);
+    interval = null;
 
-  elapsed = 0;
-  startedAt = null;
-
-  clearInterval(interval);
-  interval = null;
-
-  state.panelElapsed = 0;
-  save('PANEL ARCHIVED');
-  render();
+    state.panelElapsed = 0;
+    save('PANEL TIMER RESET');
+    render();
+}
 }
 
   buttons.forEach(button => {
