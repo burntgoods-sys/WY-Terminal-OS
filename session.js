@@ -56,7 +56,7 @@ window.WYSession = function(state, onChange) {
     state.panelElapsed = elapsed;
     save('PANEL TIMER PAUSED');
     render();
-  }
+
 
   function reset() {
   if (currentElapsed() > 0) {
