@@ -333,7 +333,7 @@ button:active,
     max-width: none;
     margin: -2px auto 0 auto;
 
-    padding: 16px 0;
+    padding: 12px 0;
 
     background: #111;
     border: 3px solid var(--wy-green);
