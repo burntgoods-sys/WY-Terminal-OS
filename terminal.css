@@ -327,13 +327,6 @@ button:active,
     color: #111;
 }
 
-.online-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #00ff66;
-    box-shadow: 0 0 6px #00ff66;
-}
 .sentry-indicator-title {
     text-align: center;
     color: #111;
@@ -343,17 +336,4 @@ button:active,
     margin-bottom: 12px;
 }
 
-.sentry-lights {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 34px;
-}
 
-.sentry-light {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #9b0000;
-    box-shadow: 0 0 6px #ff0000;
-}
