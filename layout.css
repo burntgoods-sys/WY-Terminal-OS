@@ -20,7 +20,7 @@ html, body {
   top: 0;
   width: min(var(--sidebar-width), 100vw);
   height: 100vh;
-  padding: var(--safe-top) 14px var(--safe-bottom);
+  padding: 4px 14px 4px;
   display: grid;
   grid-template-rows: auto auto 1.25fr 1fr auto auto;
   gap: 4px;
