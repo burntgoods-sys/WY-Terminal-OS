@@ -29,7 +29,7 @@ html, body {
 .panel { min-height: 0; }
 .media-window {
   width: 100%;
-  min-height: 88px;
+  min-height: 86px;
   aspect-ratio: 16 / 9;
 }
 .artist-window { aspect-ratio: 16 / 8.8; }
