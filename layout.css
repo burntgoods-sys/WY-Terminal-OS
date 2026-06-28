@@ -1,11 +1,12 @@
 :root {
   --sidebar-width: 360px;
-  --safe-top: 16px;
-  --safe-bottom: 16px;
+  --safe-top: 4px;
+  --safe-bottom: 4px;
   --gap: 0px;
 }
 
 * { box-sizing: border-box; }
+
 html, body {
   margin: 0;
   width: 100%;
@@ -15,78 +16,92 @@ html, body {
 }
 
 .terminal {
-  align-content: start;
   position: fixed;
   left: 0;
   top: 0;
   width: min(var(--sidebar-width), 100vw);
   height: 100vh;
-  padding: 4px 14px 4px;
+  padding: 2px 14px 2px;
   display: grid;
-  grid-template-rows: auto auto .95fr 1.12fr auto auto;
-  gap: 4px;
+  grid-template-rows: auto auto .9fr 1.1fr auto auto;
+  gap: 2px;
   align-content: start;
 }
 
 .panel { min-height: 0; }
+
 .media-window {
   width: 100%;
-  min-height: 86px;
+  min-height: 76px;
   aspect-ratio: 16 / 9;
 }
-.artist-window { aspect-ratio: 16 / 9; }
+
+.artist-window {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
 
 @media (max-height: 850px) {
-  :root { --gap: 8px; --safe-top: 10px; --safe-bottom: 10px; }
-  .media-window { min-height: 76px; }
+  :root {
+    --gap: 2px;
+    --safe-top: 4px;
+    --safe-bottom: 4px;
+  }
+
+  .media-window {
+    min-height: 72px;
+  }
 }
 
 @media (max-width: 1200px) {
   :root { --sidebar-width: 320px; }
 }
+
 .archive-preview {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
 }
 
 .archive-preview-value {
-    color: var(--terminal-green);
-    font-size: 0.9rem;
-    letter-spacing: 0.08em;
+  color: var(--terminal-green);
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
 }
 
 .session-date {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
 }
 
 .session-date output {
-    color: var(--terminal-green);
-    font-weight: bold;
+  color: var(--terminal-green);
+  font-weight: bold;
 }
+
 .panel,
 .brand,
 .console {
-    margin: 0;
+  margin: 0;
 }
 
 .panel + .panel,
 .panel + .console,
 .brand + .panel {
-    margin-top: -1px;
+  margin-top: -2px;
 }
 
 .artist-window,
 .session-panel {
-    width: 100%;
+  width: 100%;
 }
+
 .archive-log {
-  margin-top: 8px;
+  margin-top: 4px;
   border-top: 1px solid var(--wy-green);
-  padding-top: 6px;
+  padding-top: 3px;
   font-size: 8px;
 }
