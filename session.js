@@ -74,7 +74,6 @@ window.WYSession = function(state, onChange) {
   save('PANEL TIMER RESET');
   render();
 }
-}
 
   buttons.forEach(button => {
     button.addEventListener('click', () => {
