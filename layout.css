@@ -82,3 +82,9 @@ html, body {
 .session-panel {
     width: 100%;
 }
+.archive-log {
+  margin-top: 8px;
+  border-top: 1px solid var(--wy-green);
+  padding-top: 6px;
+  font-size: 8px;
+}
