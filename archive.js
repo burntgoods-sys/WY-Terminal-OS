@@ -1,30 +1,44 @@
 window.WYArchive = function(state) {
-  const pad = n => String(Math.max(0, n)).padStart(3, '0');
+  const listEl = document.getElementById('archiveList');
 
-  function formatTime(seconds = 0) {
-    const h = Math.floor(seconds / 3600);
-    const m = Math.floor((seconds % 3600) / 60);
-    const s = seconds % 60;
+  if (!state.archiveLog) state.archiveLog = [];
 
-    return h > 0
-      ? `${h}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`
-      : `${m}:${String(s).padStart(2, '0')}`;
+  function formatEntry(entry) {
+    return `P${String(entry.page).padStart(3, '0')}-${String(entry.panel).padStart(3, '0')} VERIFIED`;
+  }
+
+  function render() {
+    if (!listEl) return;
+
+    listEl.innerHTML = '';
+
+    state.archiveLog.slice(-8).forEach(entry => {
+      const li = document.createElement('li');
+      li.textContent = formatEntry(entry);
+      listEl.appendChild(li);
+    });
+
+    listEl.scrollTop = listEl.scrollHeight;
+  }
+
+  function add(page, panel) {
+    state.archiveLog.push({
+      page,
+      panel,
+      time: Date.now()
+    });
+
+    render();
   }
 
   function latestLine() {
-    const log = state.panelLog || [];
+    if (!state.archiveLog.length) return 'BUFFER EMPTY';
 
-    if (!log.length) {
-      return 'ARCHIVE EMPTY';
-    }
-
-    const last = log[log.length - 1];
-
-    return `D${last.date || 'NO DATE'} P${pad(last.page)} #${pad(last.panel)} COMPLETE ${formatTime(last.elapsed)}`;
+    const latest = state.archiveLog[state.archiveLog.length - 1];
+    return formatEntry(latest);
   }
 
-  return {
-    latestLine,
-    formatTime
-  };
+  render();
+
+  return { add, render, latestLine };
 };
