@@ -15,8 +15,11 @@
   const save = () => WYStorage.save(state);
 
   const archive = window.WYArchive
-    ? WYArchive(state)
-    : { latestLine: () => 'BUFFER EMPTY' };
+  ? WYArchive(state)
+  : {
+      add: () => {},
+      latestLine: () => 'BUFFER EMPTY'
+    };
 
   window.wySession = WYSession(state, msg => {
     if (msg) terminal.write(msg);
