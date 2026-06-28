@@ -331,9 +331,9 @@ button:active,
     display: block;
     width: calc(1000% - 4px);
     max-width: none;
-    margin: -5.5px auto 0 auto;
+    margin: -6px auto 0 auto;
 
-    padding: 11px 0;
+    padding: 12px 0;
 
     background: #111;
     border: 3px solid var(--wy-green);
