@@ -279,50 +279,49 @@ button:active,
 =========================== */
 
 .defence-panel {
-    margin-top: -6px;
-    margin-bottom: 0;
-    padding: 4px;
+    margin-top: 2px;
+    padding: 6px;
     height: 76px;
     overflow: hidden;
     border: 0;
 
     background:
+        /* Top */
+        repeating-linear-gradient(
+            45deg,
+            #111 0px,
+            #111 10px,
+            #ffd400 10px,
+            #ffd400 20px
+        ) top / 100% 10px no-repeat,
+
+        /* Bottom */
+        repeating-linear-gradient(
+            45deg,
+            #111 0px,
+            #111 10px,
+            #ffd400 10px,
+            #ffd400 20px
+        ) bottom / 100% 10px no-repeat,
+
+        /* Left */
         repeating-linear-gradient(
             -45deg,
             #111 0px,
-            #111 8px,
-            #d9b100 8px,
-            #d9b100 16px
-        );
-}
-.defence-panel > * {
-  background: rgba(0,0,0,.72);
-  padding: 4px 6px;
-}
-.defence-title {
-    color: #111;
-    font-weight: 900;
-    text-transform: uppercase;
-    text-align: center;
-    letter-spacing: .15em;
-    margin-bottom: 8px;
-}
-.defence-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 4px 0;
-}
-.sentry-status {
-    color: #111;
-    font-weight: 700;
-}
-.nuke-button {
-    border: 2px solid #111;
-    background: #d9b100;
-    color: #111;
-    font-weight: 900;
-    text-align: center;
-    padding: 6px;
-    margin-top: 10px;
+            #111 10px,
+            #ffd400 10px,
+            #ffd400 20px
+        ) left / 10px 100% no-repeat,
+
+        /* Right */
+        repeating-linear-gradient(
+            -45deg,
+            #111 0px,
+            #111 10px,
+            #ffd400 10px,
+            #ffd400 20px
+        ) right / 10px 100% no-repeat,
+
+        /* Clean yellow centre */
+        #ffd400;
 }
