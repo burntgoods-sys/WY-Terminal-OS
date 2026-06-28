@@ -274,31 +274,4 @@ button:active,
   margin: 0;
   padding-left: 14px;
 }
-.archive-confirm {
-  display: flex;
-  gap: 6px;
-  margin: 6px 0;
-}
 
-.archive-confirm[hidden] {
-  display: none;
-}
-
-.archive-choice {
-  flex: 1;
-  background: transparent;
-  color: var(--wy-green);
-  border: 1px solid var(--wy-green);
-  font: inherit;
-  padding: 4px 0;
-  cursor: pointer;
-}
-
-.archive-choice:hover {
-  background: rgba(120, 255, 120, .12);
-}
-
-.archive-choice:active {
-  background: var(--wy-green);
-  color: #000;
-}
