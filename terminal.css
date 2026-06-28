@@ -255,3 +255,22 @@ button:active,
   box-shadow: 0 0 12px var(--wy-green);
   transform: translateY(1px);
 }
+.archive-log {
+  margin-top: 6px;
+  border-top: 1px solid var(--wy-green);
+  padding-top: 6px;
+  font-size: 8px;
+  color: var(--wy-dim);
+  letter-spacing: .08em;
+}
+
+.archive-log div {
+  color: var(--wy-green);
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.archive-log ol {
+  margin: 0;
+  padding-left: 14px;
+}
