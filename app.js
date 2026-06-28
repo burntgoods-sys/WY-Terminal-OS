@@ -23,8 +23,10 @@
 
   window.wySession = WYSession(state, msg => {
   if (msg) terminal.write(msg);
-
-  WYCounters(state, msg => {
+  save();
+});
+  
+WYCounters(state, msg => {
     terminal.write(`UPDATED ${msg}`);
     save();
 });
