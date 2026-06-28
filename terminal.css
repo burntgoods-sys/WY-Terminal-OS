@@ -274,54 +274,36 @@ button:active,
   margin: 0;
   padding-left: 14px;
 }
-/* ===========================
-   DEFENCE SYSTEMS
-=========================== */
-
 .defence-panel {
+    position: relative;
     margin-top: 2px;
-    padding: 6px 6px 50px 6px;
-    height: 76px;
+    height: 96px;
+    padding: 14px;
     overflow: hidden;
     border: 0;
+    background: #ffd400;
+}
+
+.defence-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
 
     background:
-        /* Top */
         repeating-linear-gradient(
             45deg,
             #111 0px,
             #111 10px,
-            #ffd400 10px,
-            #ffd400 20px
-        ) top / 100% 10px no-repeat,
+            transparent 10px,
+            transparent 22px
+        );
 
-        /* Bottom */
-        repeating-linear-gradient(
-            45deg,
-            #111 0px,
-            #111 10px,
-            #ffd400 10px,
-            #ffd400 20px
-        ) bottom / 100% 10px no-repeat,
+    border: 10px solid transparent;
+    box-sizing: border-box;
+}
 
-        /* Left */
-        repeating-linear-gradient(
-            -45deg,
-            #111 0px,
-            #111 10px,
-            #ffd400 10px,
-            #ffd400 20px
-        ) left / 10px 100% no-repeat,
-
-        /* Right */
-        repeating-linear-gradient(
-            -45deg,
-            #111 0px,
-            #111 10px,
-            #ffd400 10px,
-            #ffd400 20px
-        ) right / 10px 100% no-repeat,
-
-        /* Clean yellow centre */
-        #ffd400;
+.defence-panel > * {
+    position: relative;
+    z-index: 1;
 }
