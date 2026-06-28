@@ -27,10 +27,12 @@
   });
 
   WYCounters(state, msg => {
+    archive.add(state.page, state.panel);
+
     terminal.write(`UPDATED ${msg}`);
     terminal.write(archive.latestLine());
-    save();
-  });
 
+    save();
+});
   terminal.write('FOUNDATION ONLINE');
 })();
