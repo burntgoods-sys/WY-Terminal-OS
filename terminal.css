@@ -307,3 +307,30 @@ button:active,
     position: relative;
     z-index: 1;
 }
+.defence-title {
+    text-align: center;
+    font-size: 8px;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 8px;
+}
+
+.defence-grid {
+    display: grid;
+    grid-template-columns: 1fr 8px auto;
+    column-gap: 8px;
+    row-gap: 4px;
+    align-items: center;
+
+    font-size: 8px;
+    font-weight: 700;
+    color: #111;
+}
+
+.online-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #00ff66;
+    box-shadow: 0 0 6px #00ff66;
+}
