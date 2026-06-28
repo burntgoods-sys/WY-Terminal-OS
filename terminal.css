@@ -276,7 +276,7 @@ button:active,
 }
 .defence-panel {
     position: relative;
-    margin-top: 10px;
+    margin-top: -12px;
     height: 76px;
     padding: 14px;
     overflow: hidden;
