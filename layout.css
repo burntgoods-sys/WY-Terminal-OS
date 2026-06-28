@@ -29,10 +29,10 @@ html, body {
 .panel { min-height: 0; }
 .media-window {
   width: 100%;
-  min-height: 76px;
+  min-height: 86px;
   aspect-ratio: 16 / 9;
 }
-.artist-window { aspect-ratio: 16 / 8.8; }
+.artist-window { aspect-ratio: 16 / 7.4; }
 
 @media (max-height: 850px) {
   :root { --gap: 8px; --safe-top: 10px; --safe-bottom: 10px; }
