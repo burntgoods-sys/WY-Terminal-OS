@@ -21,10 +21,34 @@
       latestLine: () => 'BUFFER EMPTY'
     };
 
+  const archiveConfirm = document.getElementById('archiveConfirm');
+  const archiveChoices = document.querySelectorAll('[data-archive-choice]');
+
   window.wySession = WYSession(state, msg => {
-    if (msg) terminal.write(msg);
+  if (msg) terminal.write(msg);
+
+  if (archiveConfirm) {
+    archiveConfirm.hidden = msg !== 'ARCHIVE PANEL?';
+  }
+
+  save();
+});
+  
+archiveChoices.forEach(button => {
+  button.addEventListener('click', () => {
+    const choice = button.getAttribute('data-archive-choice');
+
+    if (choice === 'yes') {
+      archive.add(state.page, state.panel);
+      terminal.write(archive.latestLine());
+    } else {
+      terminal.write('ARCHIVE CANCELLED');
+    }
+
+    if (archiveConfirm) archiveConfirm.hidden = true;
     save();
   });
+});
 
   WYCounters(state, msg => {
     terminal.write(`UPDATED ${msg}`);
